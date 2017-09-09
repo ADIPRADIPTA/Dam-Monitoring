@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context="com.tugasakhir.adi.dmobile.bantuan">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:background="#03a9f4"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:textSize="24dp"
+                android:text="INFORMASI PENGGUNAAN\nAPLIKASI"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#03a9f4"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. Aplikasi Dam Monitoring ini dibuat untuk mengetahui atau memantau kondisi ketinggian air secara jarak jauh berbasis android, dalam aplikasi ini disedikan 2 pengguna yaitu (Admin dan Public).\n\n2. Menu Monitoring berfungsi untuk melihat kondisi ketinggian air update saat ini.\n\n3.Menu Laporan digunakan untuk mengecek laporan selama peridoe 1 bulan (hanya dapat diakses oleh admin).\n\n4. Menu Tentang menampilkan untuk info pengembangan kritik dan saran bisa dikirim ke kontak yang sudah di sediakan."
+                android:gravity="left"
+                android:textSize="18sp"
+                android:textColor="#ffffff"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

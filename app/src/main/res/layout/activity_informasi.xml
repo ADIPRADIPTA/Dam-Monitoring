@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:text="Terimakasih Kepada"
+        android:textColor="#ffffff"
+        android:textSize="16dp" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="177dp"
+        app:srcCompat="@drawable/coveruniku"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="44dp"
+        android:background="#03a9f4"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="24dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:gravity="left"
+            android:fontFamily="serif"
+            android:text="Pembimbing I"
+            android:textColor="#ffffff"
+            android:textSize="16dp" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:gravity="right"
+            android:layout_margin="5dp"
+            android:text="Pembimbing II"
+            android:textColor="#ffffff"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="24dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:gravity="left"
+            android:text="Panji Novantara, M.Kom"
+            android:textColor="#ffffff"
+            android:textSize="14dp" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif"
+            android:gravity="right"
+            android:text="Nunu Nugraha, M.T"
+            android:textColor="#ffffff"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="Info Pengembang"
+            android:textColor="#ffffff"
+            android:textSize="16dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:layout_weight="2"
+        android:layout_marginTop="10dp"
+        android:background="#03a9f4">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <ImageButton
+            android:id="@+id/btngmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@drawable/gmail" />
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:text="Kirim Email"/>
+    </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageButton
+                android:id="@+id/btnandroid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:src="@drawable/android" />
+            <TextView
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:text="Info Aplikasi"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageButton
+                android:id="@+id/btnprofile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00000000"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:src="@drawable/use" />
+            <TextView
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:text="Profile Saya"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageButton
+                android:id="@+id/btnbantuan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00000000"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:src="@drawable/bantuan"/>
+            <TextView
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:text="Bantuan"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/IProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/eImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:src="@drawable/pradipta" />
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_margin="5dp"
+           android:text="Nama :\nAdi Pradipta\nAlamat :\nDesa Sukarasa, RT. 010, RW.003, Kec. Darma, Kab. Kuningan\nTTL :\n12 Februari 1995\nNo. HP :\n+622148012173\nTeknik Informatika - 2013"
+           android:textColor="#ffffff"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/IInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:text="Info Aplikasi\n\n\nDam Monitoring Mobile\nVersi 1.0"
+            android:fontFamily="serif"
+            android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/tImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/infoaplikasi"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Creatby Skripsi\nTeknik Informatika\n2017"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_gravity=""
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/IBantuan"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:background="#03a9f4"
+        android:visibility="gone"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:gravity="left"
+            android:text="1. Aplikasi Dam Monitoring ini dibuat untuk mengetahui atau memantau kondisi ketinggian air secara jarak jauh berbasis android, dalam aplikasi ini disedikan 2 pengguna yaitu (Admin dan Public).\n\n2. Menu Monitoring berfungsi untuk melihat kondisi ketinggian air update saat ini.\n\n3.Menu Laporan digunakan untuk mengecek laporan selama peridoe 1 bulan (hanya dapat diakses oleh admin).\n\n4. Menu Tentang menampilkan untuk info pengembangan kritik dan saran bisa dikirim ke kontak yang sudah di sediakan."
+            android:textColor="#ffffff"/>
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>

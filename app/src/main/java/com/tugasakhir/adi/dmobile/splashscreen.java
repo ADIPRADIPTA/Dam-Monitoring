@@ -25,6 +25,11 @@ import java.util.List;
 
 
 public class splashscreen extends Activity {
+
+    public static String server = "http://192.168.43.3/automation_system/index.php/";
+    public static String directory = "adi/api/dataset/";
+    public static LaurensiusDbConFramework kelolaDatabase = new LaurensiusDbConFramework();
+
     LinearLayout llLogin,llButtonSelector;
     Button btnUser,btnAdmin,btnBatal,btnLogin;
     private ProgressDialog pDialog;
@@ -55,7 +60,46 @@ public class splashscreen extends Activity {
         etUsername = (EditText)findViewById(R.id.etUsername);
         etPassword = (EditText)findViewById(R.id.etPassword);
 
-        url = getResources().getString(R.string.default_server).concat(getResources().getString(R.string.default_login));
+
+        //        DATABaSE
+        Log.d(LaurensiusSystemFramework.TAG,LaurensiusSystemFramework.BUAT_DATABASE);
+        if(kelolaDatabase.buatDatabase(getResources().getString(R.string.nama_database))== LaurensiusSystemFramework.BUAT_DATABASE_SUCCESS) { //Buat database success
+            Log.d(LaurensiusSystemFramework.TAG,LaurensiusSystemFramework.BUAT_DATABASE_SUCCESS);
+            if (kelolaDatabase.cekTabelConfig() == LaurensiusSystemFramework.CEK_TABEL_AVAILABLE) { // Tabel Config Tersedia
+                Log.d(LaurensiusSystemFramework.TAG,LaurensiusSystemFramework.CEK_TABEL_AVAILABLE);
+                if (kelolaDatabase.cekIsiTabelConfig() == LaurensiusSystemFramework.CEK_ISI_TABEL_CONTAIN) { // Tabel Config Terisi
+                    Log.d(LaurensiusSystemFramework.TAG,LaurensiusSystemFramework.CEK_ISI_TABEL_CONTAIN);
+                    String data_config = kelolaDatabase.loadTabelConfig();
+                    String[] splited = new String[data_config.split(LaurensiusSystemFramework.SEPARATOR.toString()).length];
+                    splited = data_config.split(LaurensiusSystemFramework.SEPARATOR.toString());
+                    server = splited[0];
+                    directory = splited[1];
+                    Toast.makeText(getApplicationContext(),"Server : " + server + " directory : " + directory ,Toast.LENGTH_LONG).show();
+                } else if (kelolaDatabase.cekIsiTabelConfig() == LaurensiusSystemFramework.CEK_ISI_TABEL_EMPTY) { // Tabel Config Kosong
+                    Log.d(LaurensiusSystemFramework.TAG,LaurensiusSystemFramework.CEK_ISI_TABEL_EMPTY);
+                    server = getResources().getString(R.string.default_server).toString();
+                    directory = getResources().getString(R.string.default_directory).toString();
+                }
+            } else
+            if (kelolaDatabase.cekTabelConfig() == LaurensiusSystemFramework.CEK_TABEL_UNAVAILABLE) { // Tabel Config Tidak Tersedia
+                Log.d(LaurensiusSystemFramework.TAG,LaurensiusSystemFramework.CEK_TABEL_UNAVAILABLE);
+                if (kelolaDatabase.buatTabelConfig() == LaurensiusSystemFramework.BUAT_TABEL_CONFIG_SUCCESS) { //Buat Tabel Config Success
+                    Log.d(LaurensiusSystemFramework.TAG,LaurensiusSystemFramework.BUAT_TABEL_CONFIG_SUCCESS);
+                    kelolaDatabase.inputTabelConfig(getResources().getString(R.string.default_server).toString(),getResources().getString(R.string.default_directory).toString());
+                } else if (kelolaDatabase.buatTabelConfig() == LaurensiusSystemFramework.BUAT_TABEL_CONFIG_FAILED) { //Buat Tavel Config Gagal
+                    Log.d(LaurensiusSystemFramework.TAG,LaurensiusSystemFramework.BUAT_TABEL_CONFIG_FAILED);
+                    finish();
+                }
+            }
+        }else
+        if(kelolaDatabase.buatDatabase(getResources().getString(R.string.nama_database))== LaurensiusSystemFramework.BUAT_DATABASE_FAILED){ //Buat Database failed
+            Log.d(LaurensiusSystemFramework.TAG,LaurensiusSystemFramework.BUAT_DATABASE_FAILED);
+            finish();
+        }
+//        END OF DATABaSE
+
+
+        url = server.concat(directory);
 
         btnUser.setOnClickListener(new View.OnClickListener() {
             @Override

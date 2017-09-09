@@ -98,7 +98,7 @@ public class splashscreen extends Activity {
         }
 //        END OF DATABaSE
 
-
+        directory = getResources().getString(R.string.default_login);
         url = server.concat(directory);
 
         btnUser.setOnClickListener(new View.OnClickListener() {

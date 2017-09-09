@@ -26,8 +26,8 @@ import java.util.List;
 
 public class splashscreen extends Activity {
 
-    public static String server = "http://192.168.43.3/automation_system/index.php/";
-    public static String directory = "adi/api/dataset/";
+    public static String server = "";
+    public static String directory = "";
     public static LaurensiusDbConFramework kelolaDatabase = new LaurensiusDbConFramework();
 
     LinearLayout llLogin,llButtonSelector;

@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     ImageButton btninfo, btnExit, btnbantuan, btnMonitoring,btnReporting, btnSetting;
-    LinearLayout llLogin;
+    LinearLayout llLogin,llReport;
     EditText etUsername, etPassword;
     String m,u,nl;
     
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         btnReporting = (ImageButton)findViewById(R.id.btnReporting);
         btnSetting = (ImageButton)findViewById(R.id.btnsetting);
         llLogin = (LinearLayout)findViewById(R.id.llLogin);
+        llReport = (LinearLayout)findViewById(R.id.llReport);
         etUsername = (EditText)findViewById(R.id.etUsername);
         etPassword= (EditText)findViewById(R.id.etPassword);
 
@@ -37,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
         m = getParcel.getStringExtra("mode");
         u = getParcel.getStringExtra("username");
         nl = getParcel.getStringExtra("nama_lengkap");
+
+        if(m.equals("ADMINISTRATOR")){
+            llReport.setVisibility(View.VISIBLE);
+        }else{
+            llReport.setVisibility(View.GONE);
+        }
 
         btnReporting.setOnClickListener(new View.OnClickListener() {
             @Override

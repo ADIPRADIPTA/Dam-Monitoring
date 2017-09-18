@@ -74,7 +74,7 @@ public class ServiceNotifikasi extends Service {
         @Override
         protected Void doInBackground(Void... arg0) {
             ServiceHandler sh = new ServiceHandler();
-            String url = getResources().getString(R.string.default_server).concat(getResources().getString(R.string.default_directory));
+            String url = splashscreen.svr_service.concat(splashscreen.dir_service);
             String JSON_data = sh.makeServiceCall(url, ServiceHandler.GET);
             if(JSON_data!=null){
                 try {

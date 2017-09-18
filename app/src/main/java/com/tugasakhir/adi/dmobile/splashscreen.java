@@ -34,7 +34,7 @@ public class splashscreen extends Activity {
     EditText etUsername,etPassword;
     List<NameValuePair> data_login = new ArrayList<NameValuePair>(7);
     Boolean loaddata;
-    String url;
+    public static String svr_service,dir_service;
     String JO;
     String status_cek;
     String message;
@@ -56,6 +56,9 @@ public class splashscreen extends Activity {
         btnLogin= (Button)findViewById(R.id.btnLogin);
         etUsername = (EditText)findViewById(R.id.etUsername);
         etPassword = (EditText)findViewById(R.id.etPassword);
+
+        svr_service = getResources().getString(R.string.default_server);
+        dir_service = getResources().getString(R.string.default_directory);
 
         if(isMyServiceRunning(ServiceNotifikasi.class)){
             Toast.makeText(getApplicationContext(),"Service Notifikasi kondisi nyala",Toast.LENGTH_LONG).show();

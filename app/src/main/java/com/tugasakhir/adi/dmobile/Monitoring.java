@@ -54,7 +54,7 @@ public class Monitoring extends AppCompatActivity {
         protected Void doInBackground(Void... arg0) {
             Log.d(LaurensiusSystemFramework.TAG, "Do in background");
             ServiceHandler sh = new ServiceHandler();
-            String url = MainActivity.server.concat(MainActivity.directory);
+            String url = getResources().getString(R.string.default_server).concat(getResources().getString(R.string.default_directory));
             String JSON_data = sh.makeServiceCall(url, ServiceHandler.GET);
             if(JSON_data!=null){
                 try {
@@ -88,9 +88,7 @@ public class Monitoring extends AppCompatActivity {
             }
             else{
                 setContentView(R.layout.activity_badkoneksi);
-
             }
-
         }
     }
 }

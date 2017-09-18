@@ -1,7 +1,9 @@
 package com.tugasakhir.adi.dmobile;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -26,10 +28,6 @@ import java.util.List;
 
 public class splashscreen extends Activity {
 
-    public static String server = "";
-    public static String directory = "";
-    public static LaurensiusDbConFramework kelolaDatabase = new LaurensiusDbConFramework();
-
     LinearLayout llLogin,llButtonSelector;
     Button btnUser,btnAdmin,btnBatal,btnLogin;
     private ProgressDialog pDialog;
@@ -46,8 +44,7 @@ public class splashscreen extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splashscreen);
         llLogin = (LinearLayout)findViewById(R.id.llLogin);
         llButtonSelector= (LinearLayout)findViewById(R.id.llButtonSelector);
@@ -60,46 +57,11 @@ public class splashscreen extends Activity {
         etUsername = (EditText)findViewById(R.id.etUsername);
         etPassword = (EditText)findViewById(R.id.etPassword);
 
-
-        //        DATABaSE
-        Log.d(LaurensiusSystemFramework.TAG,LaurensiusSystemFramework.BUAT_DATABASE);
-        if(kelolaDatabase.buatDatabase(getResources().getString(R.string.nama_database))== LaurensiusSystemFramework.BUAT_DATABASE_SUCCESS) { //Buat database success
-            Log.d(LaurensiusSystemFramework.TAG,LaurensiusSystemFramework.BUAT_DATABASE_SUCCESS);
-            if (kelolaDatabase.cekTabelConfig() == LaurensiusSystemFramework.CEK_TABEL_AVAILABLE) { // Tabel Config Tersedia
-                Log.d(LaurensiusSystemFramework.TAG,LaurensiusSystemFramework.CEK_TABEL_AVAILABLE);
-                if (kelolaDatabase.cekIsiTabelConfig() == LaurensiusSystemFramework.CEK_ISI_TABEL_CONTAIN) { // Tabel Config Terisi
-                    Log.d(LaurensiusSystemFramework.TAG,LaurensiusSystemFramework.CEK_ISI_TABEL_CONTAIN);
-                    String data_config = kelolaDatabase.loadTabelConfig();
-                    String[] splited = new String[data_config.split(LaurensiusSystemFramework.SEPARATOR.toString()).length];
-                    splited = data_config.split(LaurensiusSystemFramework.SEPARATOR.toString());
-                    server = splited[0];
-                    directory = splited[1];
-                    Toast.makeText(getApplicationContext(),"Server : " + server + " directory : " + directory ,Toast.LENGTH_LONG).show();
-                } else if (kelolaDatabase.cekIsiTabelConfig() == LaurensiusSystemFramework.CEK_ISI_TABEL_EMPTY) { // Tabel Config Kosong
-                    Log.d(LaurensiusSystemFramework.TAG,LaurensiusSystemFramework.CEK_ISI_TABEL_EMPTY);
-                    server = getResources().getString(R.string.default_server).toString();
-                    directory = getResources().getString(R.string.default_directory).toString();
-                }
-            } else
-            if (kelolaDatabase.cekTabelConfig() == LaurensiusSystemFramework.CEK_TABEL_UNAVAILABLE) { // Tabel Config Tidak Tersedia
-                Log.d(LaurensiusSystemFramework.TAG,LaurensiusSystemFramework.CEK_TABEL_UNAVAILABLE);
-                if (kelolaDatabase.buatTabelConfig() == LaurensiusSystemFramework.BUAT_TABEL_CONFIG_SUCCESS) { //Buat Tabel Config Success
-                    Log.d(LaurensiusSystemFramework.TAG,LaurensiusSystemFramework.BUAT_TABEL_CONFIG_SUCCESS);
-                    kelolaDatabase.inputTabelConfig(getResources().getString(R.string.default_server).toString(),getResources().getString(R.string.default_directory).toString());
-                } else if (kelolaDatabase.buatTabelConfig() == LaurensiusSystemFramework.BUAT_TABEL_CONFIG_FAILED) { //Buat Tavel Config Gagal
-                    Log.d(LaurensiusSystemFramework.TAG,LaurensiusSystemFramework.BUAT_TABEL_CONFIG_FAILED);
-                    finish();
-                }
-            }
-        }else
-        if(kelolaDatabase.buatDatabase(getResources().getString(R.string.nama_database))== LaurensiusSystemFramework.BUAT_DATABASE_FAILED){ //Buat Database failed
-            Log.d(LaurensiusSystemFramework.TAG,LaurensiusSystemFramework.BUAT_DATABASE_FAILED);
-            finish();
+        if(isMyServiceRunning(ServiceNotifikasi.class)){
+            Toast.makeText(getApplicationContext(),"Service Notifikasi kondisi nyala",Toast.LENGTH_LONG).show();
+        }else {
+            startService(new Intent(getBaseContext(), ServiceNotifikasi.class));
         }
-//        END OF DATABaSE
-
-        directory = getResources().getString(R.string.default_login);
-        url = server.concat(directory);
 
         btnUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,8 +93,6 @@ public class splashscreen extends Activity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //arahkan ke async untuk post username dan password
-                // void login(String username, String password);
                 if(!etUsername.getText().toString().equals("") || !etPassword.getText().toString().equals("")){
                     data_login.add(new BasicNameValuePair("username", etUsername.getText().toString()));
                     data_login.add(new BasicNameValuePair("password", etPassword.getText().toString()));
@@ -140,9 +100,18 @@ public class splashscreen extends Activity {
                 }else{
                     Toast.makeText(getApplicationContext(),"Pastikan bahwa Anda sudah mengisi Username dan Password.",Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
+    }
+
+    private boolean isMyServiceRunning(Class<?> serviceClass) {
+        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.getName().equals(service.service.getClassName())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private class AsyncLogin extends AsyncTask<Void, Void, Void> {
@@ -159,6 +128,7 @@ public class splashscreen extends Activity {
         protected Void doInBackground(Void... arg0) {
             Log.d(LaurensiusSystemFramework.TAG, "Do in background");
             ServiceHandler sh = new ServiceHandler();
+            String url = getResources().getString(R.string.default_server).concat(getResources().getString(R.string.default_login));
             String JSON_data = sh.makeServiceCall(url, ServiceHandler.POST, data_login);
             if(JSON_data!=null){
                 try {
@@ -203,9 +173,7 @@ public class splashscreen extends Activity {
                 }else{
                     Toast.makeText(getApplicationContext(),"Gagal login : " + message,Toast.LENGTH_SHORT).show();
                 }
-//                Toast.makeText(getApplicationContext(),"Sukses load JSON : " + JO,Toast.LENGTH_SHORT).show();
             }else{
-
                 Toast.makeText(getApplicationContext(),"Gagal load JSON",Toast.LENGTH_SHORT).show();
             }
         }

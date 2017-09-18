@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Dam Monitoring</string>
-    <string name="judulmenu">APLIKASI PEMANTAUAN KETINGGIAN AIR\n\nBBWS CIMANUK CISANGGARUNG\n\nUNIT WADUK DARMA </string>
+    <string name="judulmenu">APLIKASI PEMANTAUAN KETINGGIAN AIR\nBALAI BESAR WILAYAH SUNGAI\nCIMANUK CISANGGARUNG\nWADUK DARMA </string>
     <string name="judulbantuan">Selamat Datang di Menu Bantuan, Saya Akan menjelaskan Cara Penggunaan Aplikasi Ini</string>
     <string name="profil">\nNama :\nADI PRADIPTA\nNIM :\n2013081007\nFakultas :\nIlmu Komputer\nJrusan :\nTeknik Informatika\nUniversitas Kuningan\n2013 - A\n+6282214802173</string>
     <string name="splash">Aplikasi Pemantau Ketinggian Air\nBalai Besar Wilayah Sungai\nCimanuk Cisanggarung\nUnit Waduk Darma</string>

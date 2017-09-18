@@ -129,7 +129,8 @@ public class MainActivity extends AppCompatActivity {
         btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                close();
+                Intent k = new Intent(getApplicationContext(), splashscreen.class);
+                startActivity(k);
             }
         });
     }

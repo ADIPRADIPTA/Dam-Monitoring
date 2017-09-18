@@ -75,14 +75,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnSetting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent s = new Intent(getApplicationContext(), Setting.class);
-                startActivity(s);
-            }
-        });
-
         btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

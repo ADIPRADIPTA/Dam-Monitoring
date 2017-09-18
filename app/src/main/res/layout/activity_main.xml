@@ -147,28 +147,28 @@
             android:gravity="center"
             android:paddingBottom="10dp"
             android:layout_weight="2">
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:background="#03a9f4">
-                <ImageButton
-                    android:id="@+id/btnsetting"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    android:background="#00000000"
-                    android:src="@drawable/pengaturan"/>
-                <TextView
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="#ffffff"
-                    android:text="Pengaturan"/>
-            </LinearLayout>
+            <!--<LinearLayout-->
+                <!--android:orientation="vertical"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_margin="5dp"-->
+                <!--android:background="#03a9f4">-->
+                <!--<ImageButton-->
+                    <!--android:id="@+id/btnsetting"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_margin="10dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="#00000000"-->
+                    <!--android:src="@drawable/pengaturan"/>-->
+                <!--<TextView-->
+                    <!--android:gravity="center"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textColor="#ffffff"-->
+                    <!--android:text="Pengaturan"/>-->
+            <!--</LinearLayout>-->
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"

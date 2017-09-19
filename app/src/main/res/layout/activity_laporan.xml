@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.tugasakhir.adi.dmobile.Laporan">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -35,15 +34,53 @@
                 android:layout_margin="5dp"
                 android:gravity="center">
 
-                <DatePicker
-                    android:id="@+id/datePicker"
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:datePickerMode="spinner"
-                    android:layoutMode="clipBounds">
-                </DatePicker>
+                    android:text="Bulan dan Tahun Awal"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:orientation="horizontal">
+                    <Spinner
+                        android:id="@+id/spBulanAwal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                    </Spinner>
+                    <Spinner
+                        android:id="@+id/spTahunAwal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3">
+                    </Spinner>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="Bulan dan Tahun Akhir"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Spinner
+                        android:id="@+id/spBulanAkhir"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                    </Spinner>
+                    <Spinner
+                        android:id="@+id/spTahunAkhir"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3">
+                    </Spinner>
+                </LinearLayout>
+
                 <Button
-                    android:id="@+id/btnhasil"
+                    android:id="@+id/btnCek"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -52,14 +89,13 @@
                     android:textSize="25sp"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/llLayoutBox"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <ListView
-                    android:id="@+id/listlaporan"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="#FAFAFA"
+                android:orientation="vertical">
 
-                </ListView>
             </LinearLayout>
         </LinearLayout>
 </ScrollView>

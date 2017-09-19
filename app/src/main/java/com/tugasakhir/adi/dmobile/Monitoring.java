@@ -17,8 +17,9 @@ import java.util.TimerTask;
 public class Monitoring extends AppCompatActivity {
     String Ketinggian;
     String Status;
+    String Volume;
     boolean loaddata=false;
-    TextView tvKetinggian, tvStatus;
+    TextView tvKetinggian, tvStatus, tvVolume;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +65,7 @@ public class Monitoring extends AppCompatActivity {
                     JSONObject last_data_object = last_data.getJSONObject(0);
                     Ketinggian = last_data_object.getString("ketinggian").substring(0,5).concat(" CM");
                     Status = last_data_object.getString("status");
+                    Volume = last_data_object.getString("volume").substring(0,5);
                 } catch (final JSONException e) {
                     Log.e(LaurensiusSystemFramework.TAG, e.getMessage());
                 }
@@ -83,8 +85,10 @@ public class Monitoring extends AppCompatActivity {
                 setContentView(R.layout.activity_monitoring);
                 tvKetinggian = (TextView)findViewById(R.id.tvValueKetinggianAir);
                 tvStatus = (TextView)findViewById(R.id.tvValueStatusAir);
+                tvVolume = (TextView)findViewById(R.id.tvValueVolume);
                 tvKetinggian.setText(Ketinggian);
                 tvStatus.setText(Status);
+                tvVolume.setText(Volume);
             }
             else{
                 setContentView(R.layout.activity_badkoneksi);

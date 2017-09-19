@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageButton btninfo, btnExit, btnbantuan, btnMonitoring,btnReporting, btnSetting;
+    ImageButton btninfo, btnExit, btnbantuan, btnMonitoring,btnReporting;
     LinearLayout llLogin,llReport;
     EditText etUsername, etPassword;
     String m,u,nl;
@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         btnbantuan = (ImageButton) findViewById(R.id.bantuan);
         btnMonitoring = (ImageButton) findViewById(R.id.monitoring);
         btnReporting = (ImageButton)findViewById(R.id.btnReporting);
-        btnSetting = (ImageButton)findViewById(R.id.btnsetting);
         llLogin = (LinearLayout)findViewById(R.id.llLogin);
         llReport = (LinearLayout)findViewById(R.id.llReport);
         etUsername = (EditText)findViewById(R.id.etUsername);
@@ -85,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
                 Intent k = new Intent(getApplicationContext(), splashscreen.class);
                 startActivity(k);
             }

@@ -109,7 +109,7 @@ public class ServiceNotifikasi extends Service {
                 }else
                 if(init==false){
                     Log.d("Async  :",Status);
-                    if(!Status_terakhir.equals(Notif) && !Status.equals("2")){
+                    if(!Status_terakhir.equals(Notif) && !Notif.equals("2") && !Notif.equals("4")){
                         Notification.Builder builder = new Notification.Builder(getApplication().getBaseContext());
                         Intent notificationIntent = new Intent(getApplication().getBaseContext(),Monitoring.class);
                         PendingIntent pendingIntent = PendingIntent.getActivity(getApplication().getBaseContext(), 0,notificationIntent, 0);

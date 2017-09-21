@@ -65,7 +65,7 @@ public class Monitoring extends AppCompatActivity {
                     JSONObject last_data_object = last_data.getJSONObject(0);
                     Ketinggian = last_data_object.getString("ketinggian").substring(0,5).concat(" CM");
                     Status = last_data_object.getString("status");
-                    Volume = last_data_object.getString("volume").substring(0,5);
+                    Volume = last_data_object.getString("volume").substring(0,7).concat(" CM³");
                 } catch (final JSONException e) {
                     Log.e(LaurensiusSystemFramework.TAG, e.getMessage());
                 }

@@ -104,7 +104,7 @@ public class ServiceNotifikasi extends Service {
             super.onPostExecute(result);
             if(load_data){
                 if(init==true){
-                    Status_terakhir = Notif;
+                    Status_terakhir = "4";
                     init = false;
                 }else
                 if(init==false){

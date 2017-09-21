@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(m.equals("ADMINISTRATOR")){
-                    Toast.makeText(getApplicationContext(),"Hello, " + nl + " silahkan pilih tanggal laporan.",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Hello, " + nl + " silahkan pilih bulan laporan.",Toast.LENGTH_LONG).show();
                     Intent l = new Intent(getApplicationContext(), Laporan.class);
                     startActivity(l);
                 }else{

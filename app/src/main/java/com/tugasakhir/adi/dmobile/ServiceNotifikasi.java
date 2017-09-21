@@ -25,7 +25,7 @@ public class ServiceNotifikasi extends Service {
 
     boolean init = true;
     boolean load_data;
-    String Ketinggian, Status;
+    String Ketinggian, Status, Notif, Volume;
     String Status_terakhir = null;
     public ServiceNotifikasi() {
     }
@@ -86,6 +86,8 @@ public class ServiceNotifikasi extends Service {
                     JSONObject last_data_object = last_data.getJSONObject(0);
                     Ketinggian = last_data_object.getString("ketinggian");
                     Status = last_data_object.getString("status");
+                    Volume = last_data_object.getString("volume");
+                    Notif = last_data_object.getString("notif");
                     Log.d("Dari dalam Service :",JSON_data);
                 } catch (final JSONException e) {
                     Log.e(LaurensiusSystemFramework.TAG, e.getMessage());
@@ -102,18 +104,18 @@ public class ServiceNotifikasi extends Service {
             super.onPostExecute(result);
             if(load_data){
                 if(init==true){
-                    Status_terakhir = Status;
+                    Status_terakhir = Notif;
                     init = false;
                 }else
                 if(init==false){
                     Log.d("Async  :",Status);
-                    if(!Status_terakhir.equals(Status) && !Status.equals("normal")){
+                    if(!Status_terakhir.equals(Notif) && !Notif.equals("2") && !Notif.equals("4")){
                         Notification.Builder builder = new Notification.Builder(getApplication().getBaseContext());
                         Intent notificationIntent = new Intent(getApplication().getBaseContext(),Monitoring.class);
                         PendingIntent pendingIntent = PendingIntent.getActivity(getApplication().getBaseContext(), 0,notificationIntent, 0);
                         builder.setSmallIcon(R.mipmap.ic_launcher)
-                                .setContentTitle("Notifikasi Monitoring Air")
-                                .setContentText("Ketinggian air : " + Ketinggian +" (" + Status + ")")
+                                .setContentTitle("Status Ketinggian : " + Status + "!")
+                                .setContentText("Ketinggian : " + Ketinggian +" cm || Volume" + Volume + " cm³")
                                 .setContentIntent(pendingIntent);
                         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
                         builder.setSound(alarmSound);
@@ -121,7 +123,7 @@ public class ServiceNotifikasi extends Service {
                         Notification notification = builder.getNotification();
                         notificationManager.notify(R.drawable.notification_template_icon_bg, notification);
                     }
-                    Status_terakhir = Status;
+                    Status_terakhir = Notif;
                 }
             }
         }

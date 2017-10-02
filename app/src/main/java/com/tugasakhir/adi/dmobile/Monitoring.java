@@ -42,7 +42,7 @@ public class Monitoring extends AppCompatActivity {
                 });
             }
         };
-        timer.schedule(doAsynchronousTask, 0, 3000);
+        timer.schedule(doAsynchronousTask, 0, 5000);
     }
 
     private class GetJSONData extends AsyncTask<Void, Void, Void> {

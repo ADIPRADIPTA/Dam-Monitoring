@@ -11,6 +11,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -20,6 +21,7 @@ public class Monitoring extends AppCompatActivity {
     String Volume;
     boolean loaddata=false;
     TextView tvKetinggian, tvStatus, tvVolume;
+    String JSON_data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +57,11 @@ public class Monitoring extends AppCompatActivity {
         protected Void doInBackground(Void... arg0) {
             Log.d(LaurensiusSystemFramework.TAG, "Do in background");
             ServiceHandler sh = new ServiceHandler();
-            String url = getResources().getString(R.string.default_server).concat(getResources().getString(R.string.default_directory));
-            String JSON_data = sh.makeServiceCall(url, ServiceHandler.GET);
+            Random r = new Random();
+            int angka_acak = (r.nextInt(80) + 65);
+            String url = getResources().getString(R.string.default_server).concat(getResources().getString(R.string.default_directory)).concat(String.valueOf(angka_acak)).concat("/");
+            Log.d("URL :",url);
+            JSON_data = sh.makeServiceCall(url, ServiceHandler.GET);
             if(JSON_data!=null){
                 try {
                     JSONObject jsonObj = new JSONObject(JSON_data);
@@ -75,6 +80,7 @@ public class Monitoring extends AppCompatActivity {
                 loaddata=false;
             }
             Log.d(LaurensiusSystemFramework.TAG, "JSON data : " + JSON_data);
+            JSON_data = null;
             return null;
         }
 

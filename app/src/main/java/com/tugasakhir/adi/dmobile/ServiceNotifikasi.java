@@ -18,6 +18,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -76,7 +77,10 @@ public class ServiceNotifikasi extends Service {
             ServiceHandler sh = new ServiceHandler();
             String svr = getApplicationContext().getResources().getString(R.string.default_server);
             String dir = getApplicationContext().getResources().getString(R.string.default_directory);
-            String url = svr.concat(dir);
+            Random r = new Random();
+            int angka_acak = (r.nextInt(80) + 65);
+            String url = svr.concat(dir).concat(String.valueOf(angka_acak)).concat("/");
+            Log.d("URL :",url);
             String JSON_data = sh.makeServiceCall(url, ServiceHandler.GET);
             if(JSON_data!=null){
                 try {
@@ -89,6 +93,7 @@ public class ServiceNotifikasi extends Service {
                     Volume = last_data_object.getString("volume");
                     Notif = last_data_object.getString("notif");
                     Log.d("Dari dalam Service :",JSON_data);
+                    JSON_data = null;
                 } catch (final JSONException e) {
                     Log.e(LaurensiusSystemFramework.TAG, e.getMessage());
                 }

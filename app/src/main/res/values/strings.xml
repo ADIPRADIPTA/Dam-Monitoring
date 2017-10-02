@@ -11,7 +11,7 @@
     <string name="gmail">adi@student.uniku.ac.id</string>
     <string name="nomer">08970606466</string>
 
-    <string name="default_server">http://192.168.43.3/automation_system_adi/index.php/</string>
+    <string name="default_server">http://dam-monitoring.laurensius-dede-suhardiman.com/index.php/</string>
     <string name="default_directory">api/dataset/</string>
     <string name="default_login">monitoringketinggian/verifikasi/</string>
     <string name="default_custom_report">api/custom_morning_report/</string>

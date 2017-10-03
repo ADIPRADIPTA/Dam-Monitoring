@@ -23,8 +23,8 @@
                     android:textColor="#FFFFFF"
                     android:textStyle="bold"
                     android:fontFamily="serif"
-                    android:textSize="24dp"
-                    android:text="LAPORAN KETINGGIAN AIR\nDALAM PERIODE"/>
+                    android:textSize="20dp"
+                    android:text="LAPORAN HASIL PENGUKURAN\nKETINGGIAN AIR BENDUNGAN"/>
             </LinearLayout>
 
             <LinearLayout

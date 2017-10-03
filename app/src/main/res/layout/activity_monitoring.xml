@@ -23,7 +23,7 @@
                 android:textStyle="bold"
                 android:fontFamily="serif"
                 android:textSize="24dp"
-                android:text="STATUS KETINGGIAN AIR\nSAAT INI"/>
+                android:text="STATUS KETINGGIAN AIR\nBENDUNGAN"/>
         </LinearLayout>
 
         <!-- Ketinggian Air-->
@@ -44,13 +44,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#ffffff"
-                    android:text="Ketinggian Air"
+                    android:text="Tinggi Pernukaan Air"
                     android:textAlignment="center"
                     android:textStyle="bold"
                     android:fontFamily="serif"
                     android:background="#03a9f4"
                     android:textSize="25dp"/>
-
                 <TextView
                     android:id="@+id/tvValueKetinggianAir"
                     android:layout_width="match_parent"
@@ -60,16 +59,6 @@
                     android:textColor="#000000"
                     android:textAlignment="center"
                     android:textSize="40dp" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:text="Dari dasar Bendungan"
-                    android:textAlignment="center"
-                    android:textStyle="bold"
-                    android:fontFamily="serif"
-                    android:background="#DDDDDD"
-                    android:textSize="20dp"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -84,7 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
-            android:text="Status Ketinggian Air"
+            android:text="Katagori"
             android:textAlignment="center"
             android:textStyle="bold"
             android:textSize="25dp"

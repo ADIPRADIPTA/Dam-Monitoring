@@ -11,12 +11,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="15dp">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="match_parent"
             android:layout_margin="5dp"
-            android:background="#03a9f4"
+            android:background="#000000"
             android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
@@ -25,29 +26,18 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:fontFamily="serif"
-                android:textSize="24dp"
-                android:text="INFORMASI BANTUAN\nAPLIKASI"/>
-        </LinearLayout>
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#03a9f4"
-            android:padding="5dp"
-            android:layout_margin="5dp"
-            android:orientation="vertical">
+                android:textSize="16dp"
+                android:layout_marginBottom="30dp"
+                android:text="INFORMASI BANTUAN APLIKASI\nDAM MONITORING\nV.1"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1. Aplikasi ini dibuat untuk mengetahui kondisi ketinggian air pada bendungan Waduk Darma.\n\n2. Pengguna dapat megetahui ketinggian air saat ini pada bendungan.\n\n3. Aplikasi ini bersipat online dengan informasi ketinggian air selama 24jam.\n\n3. Pengguna sebagai tamu hanya dapat mengakses monitoring ketinggian air saat ini.\n\n4. Untuk monitor laporan hanya dapat di akses oleh operator atau petugas dari kantor.\n\n5. Untuk kritik dan saran dapat dikirim melalui kontak info pengembangan terdapat di menu tentang."
-                android:gravity="left"
-                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="1. Aplikasi ini dibuat untuk mengetahui kondisi ketinggian air pada bendungan Waduk Darma.\n\n2. Pengguna dapat megetahui ketinggian air saat ini pada bendungan.\n\n3. Aplikasi ini bersipat online dengan informasi ketinggian air selama 24jam.\n\n4. Pengguna sebagai tamu hanya dapat mengakses monitoring ketinggian air saat ini.\n\n5. Untuk monitor laporan hanya dapat di akses oleh operator atau petugas dari kantor.\n\n6. Untuk kritik dan saran dapat dikirim melalui kontak info pengembangan terdapat di menu tentang."
+                android:gravity="center"
+                android:textSize="16sp"
                 android:fontFamily="serif"
                 android:textColor="#ffffff"
                 android:textStyle="bold"/>
         </LinearLayout>
-        </ScrollView>
     </LinearLayout>
 </LinearLayout>

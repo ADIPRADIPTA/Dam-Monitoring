@@ -11,7 +11,7 @@
     <string name="gmail">adi@student.uniku.ac.id</string>
     <string name="nomer">08970606466</string>
 
-    <string name="default_server">http://dam-monitoring.laurensius-dede-suhardiman.com/index.php/</string>
+    <string name="default_server">http://192.168.43.3/automation_system_adi/index.php/</string>
     <string name="default_directory">api/dataset/</string>
     <string name="default_login">monitoringketinggian/verifikasi/</string>
     <string name="default_custom_report">api/custom_morning_report/</string>
@@ -30,12 +30,6 @@
         <item>12</item>
     </string-array>
     <string-array name="tahun">
-        <item>2011</item>
-        <item>2012</item>
-        <item>2013</item>
-        <item>2014</item>
-        <item>2015</item>
-        <item>2016</item>
         <item>2017</item>
         <item>2018</item>
         <item>2019</item>

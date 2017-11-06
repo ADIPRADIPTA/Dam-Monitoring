@@ -28,23 +28,34 @@ public class Monitoring extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monitoring);
 
+//        final Handler handler = new Handler();
+//        Timer timer = new Timer();
+//        TimerTask doAsynchronousTask = new TimerTask() {
+//            @Override
+//            public void run() {
+//                handler.post(new Runnable() {
+//                    public void run() {
+//                        try {
+//                            GetJSONData getjsondata = new GetJSONData();
+//                            getjsondata.execute();
+//                        } catch (Exception e) {
+//                        }
+//                    }
+//                });
+//            }
+//        };
+//        timer.schedule(doAsynchronousTask, 0, 10000);
+
         final Handler handler = new Handler();
-        Timer timer = new Timer();
-        TimerTask doAsynchronousTask = new TimerTask() {
+        Runnable refresh = new Runnable() {
             @Override
             public void run() {
-                handler.post(new Runnable() {
-                    public void run() {
-                        try {
-                            GetJSONData getjsondata = new GetJSONData();
-                            getjsondata.execute();
-                        } catch (Exception e) {
-                        }
-                    }
-                });
+                new GetJSONData().execute();
+                handler.postDelayed(this, 4000);
             }
         };
-        timer.schedule(doAsynchronousTask, 0, 3000);
+        handler.postDelayed(refresh, 1000);
+
     }
 
     private class GetJSONData extends AsyncTask<Void, Void, Void> {
@@ -58,7 +69,7 @@ public class Monitoring extends AppCompatActivity {
             Log.d(LaurensiusSystemFramework.TAG, "Do in background");
             ServiceHandler sh = new ServiceHandler();
             Random r = new Random();
-            int angka_acak = (r.nextInt(80) + 65);
+            int angka_acak = (r.nextInt(100) + 9999999);
             String url = getResources().getString(R.string.default_server).concat(getResources().getString(R.string.default_directory)).concat(String.valueOf(angka_acak)).concat("/");
             Log.d("URL :",url);
             JSON_data = sh.makeServiceCall(url, ServiceHandler.GET);
@@ -79,7 +90,7 @@ public class Monitoring extends AppCompatActivity {
             else{
                 loaddata=false;
             }
-            Log.d(LaurensiusSystemFramework.TAG, "JSON data : " + JSON_data);
+            Log.d(LaurensiusSystemFramework.TAG, "JSON data monitoring : " + JSON_data);
             JSON_data = null;
             return null;
         }

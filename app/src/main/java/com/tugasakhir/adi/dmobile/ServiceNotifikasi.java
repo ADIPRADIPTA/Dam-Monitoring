@@ -39,24 +39,33 @@ public class ServiceNotifikasi extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Toast.makeText(this, "Service Notifikasi ON", Toast.LENGTH_LONG).show();
+//        final Handler handler = new Handler();
+//        Timer timer = new Timer();
+//        TimerTask doAsynchronousTask = new TimerTask() {
+//            @Override
+//            public void run() {
+//                handler.post(new Runnable() {
+//                    public void run() {
+//                        try {
+//                            GetJSONData getjsondata = new GetJSONData();
+//                            getjsondata.execute();
+//                            Log.d("On Runable :", "OK");
+//                        } catch (Exception e) {
+//                        }
+//                    }
+//                });
+//            }
+//        };
+//        timer.schedule(doAsynchronousTask, 0, 10000);
         final Handler handler = new Handler();
-        Timer timer = new Timer();
-        TimerTask doAsynchronousTask = new TimerTask() {
+        Runnable refresh = new Runnable() {
             @Override
             public void run() {
-                handler.post(new Runnable() {
-                    public void run() {
-                        try {
-                            GetJSONData getjsondata = new GetJSONData();
-                            getjsondata.execute();
-                            Log.d("On Runable :", "OK");
-                        } catch (Exception e) {
-                        }
-                    }
-                });
+                new GetJSONData().execute();
+                handler.postDelayed(this, 4000);
             }
         };
-        timer.schedule(doAsynchronousTask, 0, 3000);
+        handler.postDelayed(refresh, 4000);
         return START_STICKY;
     }
 
@@ -78,9 +87,9 @@ public class ServiceNotifikasi extends Service {
             String svr = getApplicationContext().getResources().getString(R.string.default_server);
             String dir = getApplicationContext().getResources().getString(R.string.default_directory);
             Random r = new Random();
-            int angka_acak = (r.nextInt(80) + 65);
+            int angka_acak = (r.nextInt(100) + 9999999);
             String url = svr.concat(dir).concat(String.valueOf(angka_acak)).concat("/");
-            Log.d("URL :",url);
+            Log.d("Service URL :",url);
             String JSON_data = sh.makeServiceCall(url, ServiceHandler.GET);
             if(JSON_data!=null){
                 try {

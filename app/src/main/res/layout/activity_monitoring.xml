@@ -21,7 +21,7 @@
                 android:gravity="center"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
-                android:fontFamily="serif"
+                android:fontFamily="arial"
                 android:textSize="24dp"
                 android:text="STATUS KETINGGIAN AIR\nBENDUNGAN"/>
         </LinearLayout>
@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -44,10 +44,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#ffffff"
-                    android:text="Tinggi Pernukaan Air"
+                    android:text="Tinggi Permukaan Air"
                     android:textAlignment="center"
                     android:textStyle="bold"
-                    android:fontFamily="serif"
+                    android:fontFamily="arial"
                     android:background="#03a9f4"
                     android:textSize="25dp"/>
                 <TextView
@@ -58,7 +58,7 @@
                     android:text="0"
                     android:textColor="#000000"
                     android:textAlignment="center"
-                    android:textSize="40dp" />
+                    android:textSize="50dp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -68,27 +68,27 @@
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_margin="5dp">
-        <TextView
-            android:id="@+id/tvLabelStatusair"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
-            android:text="Katagori"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:textSize="25dp"
-            android:fontFamily="serif"
-            android:background="#03a9f4"/>
-        <TextView
-            android:id="@+id/tvValueStatusAir"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="-"
-            android:textColor="#000000"
-            android:textAlignment="center"
-            android:background="#dcdcdc"
-            android:textSize="40dp"/>
-            </LinearLayout>
+            <TextView
+                android:id="@+id/tvLabelStatusair"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:text="Kategori"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:fontFamily="arial"
+                android:background="#03a9f4"/>
+            <TextView
+                android:id="@+id/tvValueStatusAir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textColor="#000000"
+                android:textAlignment="center"
+                android:background="#dcdcdc"
+                android:textSize="50dp"/>
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -103,7 +103,7 @@
                 android:text="Volume Air"
                 android:textAlignment="center"
                 android:textStyle="bold"
-                android:fontFamily="serif"
+                android:fontFamily="arial"
                 android:background="#03a9f4"
                 android:textSize="25dp"/>
             <TextView
@@ -114,7 +114,7 @@
                 android:text="0"
                 android:textColor="#000000"
                 android:textAlignment="center"
-                android:textSize="40dp" />
+                android:textSize="50dp" />
         </LinearLayout>
-        </LinearLayout>
+    </LinearLayout>
 </ScrollView>

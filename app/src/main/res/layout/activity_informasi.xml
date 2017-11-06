@@ -44,7 +44,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
         android:background="#03a9f4"
         android:orientation="vertical">
         <TextView
@@ -61,7 +61,8 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="25dp">
         <LinearLayout
             android:orientation="vertical"
             android:layout_margin="5dp"
@@ -70,12 +71,6 @@
             android:background="#000000"
             android:gravity="center"
             android:layout_weight="1">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/logo"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="5dp"/>
             <TextView
                 android:gravity="center"
                 android:layout_width="match_parent"
@@ -83,7 +78,7 @@
                 android:textColor="#ffffff"
                 android:fontFamily="serif"
                 android:textSize="16sp"
-                android:text="ADI PRADIPTA"/>
+                android:text="Adi Pradipta"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -94,7 +89,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TEKNIK INFORMATIKA\nFAKULTAS ILMU KOMPUTER\n2017"
+                android:text="Teknik Informatika\nFakultas Ilmu Komputer\nUniversitas Kuningan\n2017"
                 android:textColor="#ffffff"
                 android:textSize="16sp"
                 android:gravity="center"/>

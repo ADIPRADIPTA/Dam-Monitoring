@@ -22,13 +22,13 @@
                 android:id="@+id/judulmenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/judulmenu"
+                android:text="APLIKASI PEMANTAU KETINGGIAN AIR BENDUNGAN WADUK DARMA\nBALAI BESAR WILAYAH SUNGAI\nCIMANUK CISANGGARUNG"
                 android:gravity="center"
                 android:textColor="#FFFFFF"
                 android:layout_marginTop="25dp"
                 android:layout_marginBottom="5dp"
                 android:textStyle="bold"
-                android:fontFamily="Segoe UI Semibold"
+                android:fontFamily="arial"
                 android:textSize="17sp"/>
     </LinearLayout>
         <LinearLayout
@@ -177,20 +177,22 @@
                 android:layout_weight="1"
                 android:layout_margin="5dp"
                 android:background="#03a9f4">
+
                 <ImageButton
                     android:id="@+id/keluar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/exit"
-                    android:background="#00000000"
                     android:layout_margin="15dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:src="@drawable/exit" />
+
                 <TextView
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#ffffff"
-                    android:text="Exit"/>
+                    android:text="Keluar"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

@@ -1,9 +1,5 @@
 package com.tugasakhir.adi.dmobile;
 
-/**
- * Created by Laurensius D.S on 7/19/2017.
- */
-
 public class LaurensiusSystemFramework {
     //-----------------------DATABASE-----------------------------------
     public static String BUAT_DATABASE_SUCCESS = "Buat database sukses";

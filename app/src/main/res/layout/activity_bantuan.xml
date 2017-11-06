@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="15dp">
+        android:layout_marginTop="5dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -25,17 +25,17 @@
                 android:gravity="center"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
-                android:fontFamily="serif"
+                android:fontFamily="arial"
                 android:textSize="16dp"
                 android:layout_marginBottom="30dp"
                 android:text="INFORMASI BANTUAN APLIKASI\nDAM MONITORING\nV.1"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="1. Aplikasi ini dibuat untuk mengetahui kondisi ketinggian air pada bendungan Waduk Darma.\n\n2. Pengguna dapat megetahui ketinggian air saat ini pada bendungan.\n\n3. Aplikasi ini bersipat online dengan informasi ketinggian air selama 24jam.\n\n4. Pengguna sebagai tamu hanya dapat mengakses monitoring ketinggian air saat ini.\n\n5. Untuk monitor laporan hanya dapat di akses oleh operator atau petugas dari kantor.\n\n6. Untuk kritik dan saran dapat dikirim melalui kontak info pengembangan terdapat di menu tentang."
+                android:text="1. Aplikasi Dam Monitoring ini dibuat untuk mengetahui kondisi ketinggian air secara otomatis.\n\n2. Pada aplikasi Dam Monitoring ini disedikan beberapa fitur menu yang dapat diakses.\n\n3. Menu Monitoring berfungsi untuk melihat kondisi ketinggian air update saat ini.\n\n4.Menu Laporan digunakan untuk mengecek laporan bulanan (hanya dapat diakses oleh pengelola).\n\n5. Menu Tentang menampilkan untuk info pengembangan kritik dan saran bisa dikirim ke kontak yang sudah di sediakan."
                 android:gravity="center"
-                android:textSize="16sp"
-                android:fontFamily="serif"
+                android:textSize="19sp"
+                android:fontFamily="arial"
                 android:textColor="#ffffff"
                 android:textStyle="bold"/>
         </LinearLayout>

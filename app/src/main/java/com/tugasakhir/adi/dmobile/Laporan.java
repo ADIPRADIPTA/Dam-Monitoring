@@ -208,7 +208,7 @@ public class Laporan extends AppCompatActivity {
                 }
 
             }else{
-                Toast.makeText(getApplicationContext(),"Error Bos",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
             }
         }
     }

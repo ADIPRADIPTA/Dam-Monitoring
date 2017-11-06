@@ -22,7 +22,7 @@
                     android:gravity="center"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold"
-                    android:fontFamily="serif"
+                    android:fontFamily="arial"
                     android:textSize="20dp"
                     android:text="LAPORAN HASIL PENGUKURAN\nKETINGGIAN AIR BENDUNGAN"/>
             </LinearLayout>

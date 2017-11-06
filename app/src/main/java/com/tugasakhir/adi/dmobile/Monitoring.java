@@ -28,38 +28,33 @@ public class Monitoring extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monitoring);
 
-//        final Handler handler = new Handler();
-//        Timer timer = new Timer();
-//        TimerTask doAsynchronousTask = new TimerTask() {
-//            @Override
-//            public void run() {
-//                handler.post(new Runnable() {
-//                    public void run() {
-//                        try {
-//                            GetJSONData getjsondata = new GetJSONData();
-//                            getjsondata.execute();
-//                        } catch (Exception e) {
-//                        }
-//                    }
-//                });
-//            }
-//        };
-//        timer.schedule(doAsynchronousTask, 0, 10000);
-
         final Handler handler = new Handler();
-        Runnable refresh = new Runnable() {
+        Timer timer = new Timer();
+        TimerTask doAsynchronousTask = new TimerTask() {
             @Override
             public void run() {
-                new GetJSONData().execute();
-                handler.postDelayed(this, 4000);
+                handler.post(new Runnable() {
+                    public void run() {
+                        try {
+                            GetJSONData getjsondata = new GetJSONData();
+                            getjsondata.execute();
+                        } catch (Exception e) {
+                        }
+                    }
+                });
             }
         };
-<<<<<<< HEAD
         timer.schedule(doAsynchronousTask, 0, 5000);
-=======
-        handler.postDelayed(refresh, 1000);
 
->>>>>>> dd71cee4299beb6cdf212a2518907bbae7c48db7
+//        Runnable refresh = new Runnable() {
+//            @Override
+//            public void run() {
+//                new GetJSONData().execute();
+//                handler.postDelayed(this, 4000);
+//            }
+//        };
+//        timer.schedule(doAsynchronousTask, 0, 5000);
+//        handler.postDelayed(refresh, 1000);
     }
 
     private class GetJSONData extends AsyncTask<Void, Void, Void> {

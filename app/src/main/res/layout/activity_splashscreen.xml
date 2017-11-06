@@ -37,13 +37,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
+            android:visibility="gone"
             android:text="Pengguna Umum" />
 
         <Button
             android:id="@+id/btnAdmin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pengolola"/>
+            android:text="Login"/>
     </LinearLayout>
 
         <LinearLayout

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DMobile.iml" filepath="$PROJECT_DIR$/DMobile.iml" />
+      <module fileurl="file://D:\Data All About Praktek\Pakai Android Studio\apps\Dam-Monitoring\DMobile.iml" filepath="D:\Data All About Praktek\Pakai Android Studio\apps\Dam-Monitoring\DMobile.iml" />
       <module fileurl="file://$PROJECT_DIR$/Dam-Monitoring.iml" filepath="$PROJECT_DIR$/Dam-Monitoring.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

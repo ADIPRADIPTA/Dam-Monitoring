@@ -11,6 +11,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -20,29 +21,45 @@ public class Monitoring extends AppCompatActivity {
     String Volume;
     boolean loaddata=false;
     TextView tvKetinggian, tvStatus, tvVolume;
+    String JSON_data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monitoring);
 
+//        final Handler handler = new Handler();
+//        Timer timer = new Timer();
+//        TimerTask doAsynchronousTask = new TimerTask() {
+//            @Override
+//            public void run() {
+//                handler.post(new Runnable() {
+//                    public void run() {
+//                        try {
+//                            GetJSONData getjsondata = new GetJSONData();
+//                            getjsondata.execute();
+//                        } catch (Exception e) {
+//                        }
+//                    }
+//                });
+//            }
+//        };
+//        timer.schedule(doAsynchronousTask, 0, 10000);
+
         final Handler handler = new Handler();
-        Timer timer = new Timer();
-        TimerTask doAsynchronousTask = new TimerTask() {
+        Runnable refresh = new Runnable() {
             @Override
             public void run() {
-                handler.post(new Runnable() {
-                    public void run() {
-                        try {
-                            GetJSONData getjsondata = new GetJSONData();
-                            getjsondata.execute();
-                        } catch (Exception e) {
-                        }
-                    }
-                });
+                new GetJSONData().execute();
+                handler.postDelayed(this, 4000);
             }
         };
+<<<<<<< HEAD
         timer.schedule(doAsynchronousTask, 0, 5000);
+=======
+        handler.postDelayed(refresh, 1000);
+
+>>>>>>> dd71cee4299beb6cdf212a2518907bbae7c48db7
     }
 
     private class GetJSONData extends AsyncTask<Void, Void, Void> {
@@ -55,8 +72,11 @@ public class Monitoring extends AppCompatActivity {
         protected Void doInBackground(Void... arg0) {
             Log.d(LaurensiusSystemFramework.TAG, "Do in background");
             ServiceHandler sh = new ServiceHandler();
-            String url = getResources().getString(R.string.default_server).concat(getResources().getString(R.string.default_directory));
-            String JSON_data = sh.makeServiceCall(url, ServiceHandler.GET);
+            Random r = new Random();
+            int angka_acak = (r.nextInt(100) + 9999999);
+            String url = getResources().getString(R.string.default_server).concat(getResources().getString(R.string.default_directory)).concat(String.valueOf(angka_acak)).concat("/");
+            Log.d("URL :",url);
+            JSON_data = sh.makeServiceCall(url, ServiceHandler.GET);
             if(JSON_data!=null){
                 try {
                     JSONObject jsonObj = new JSONObject(JSON_data);
@@ -74,7 +94,8 @@ public class Monitoring extends AppCompatActivity {
             else{
                 loaddata=false;
             }
-            Log.d(LaurensiusSystemFramework.TAG, "JSON data : " + JSON_data);
+            Log.d(LaurensiusSystemFramework.TAG, "JSON data monitoring : " + JSON_data);
+            JSON_data = null;
             return null;
         }
 

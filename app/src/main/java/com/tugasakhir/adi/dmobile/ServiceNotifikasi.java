@@ -18,6 +18,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -38,24 +39,33 @@ public class ServiceNotifikasi extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Toast.makeText(this, "Service Notifikasi ON", Toast.LENGTH_LONG).show();
+//        final Handler handler = new Handler();
+//        Timer timer = new Timer();
+//        TimerTask doAsynchronousTask = new TimerTask() {
+//            @Override
+//            public void run() {
+//                handler.post(new Runnable() {
+//                    public void run() {
+//                        try {
+//                            GetJSONData getjsondata = new GetJSONData();
+//                            getjsondata.execute();
+//                            Log.d("On Runable :", "OK");
+//                        } catch (Exception e) {
+//                        }
+//                    }
+//                });
+//            }
+//        };
+//        timer.schedule(doAsynchronousTask, 0, 10000);
         final Handler handler = new Handler();
-        Timer timer = new Timer();
-        TimerTask doAsynchronousTask = new TimerTask() {
+        Runnable refresh = new Runnable() {
             @Override
             public void run() {
-                handler.post(new Runnable() {
-                    public void run() {
-                        try {
-                            GetJSONData getjsondata = new GetJSONData();
-                            getjsondata.execute();
-                            Log.d("On Runable :", "OK");
-                        } catch (Exception e) {
-                        }
-                    }
-                });
+                new GetJSONData().execute();
+                handler.postDelayed(this, 4000);
             }
         };
-        timer.schedule(doAsynchronousTask, 0, 3000);
+        handler.postDelayed(refresh, 4000);
         return START_STICKY;
     }
 
@@ -76,7 +86,10 @@ public class ServiceNotifikasi extends Service {
             ServiceHandler sh = new ServiceHandler();
             String svr = getApplicationContext().getResources().getString(R.string.default_server);
             String dir = getApplicationContext().getResources().getString(R.string.default_directory);
-            String url = svr.concat(dir);
+            Random r = new Random();
+            int angka_acak = (r.nextInt(100) + 9999999);
+            String url = svr.concat(dir).concat(String.valueOf(angka_acak)).concat("/");
+            Log.d("Service URL :",url);
             String JSON_data = sh.makeServiceCall(url, ServiceHandler.GET);
             if(JSON_data!=null){
                 try {
@@ -89,6 +102,7 @@ public class ServiceNotifikasi extends Service {
                     Volume = last_data_object.getString("volume");
                     Notif = last_data_object.getString("notif");
                     Log.d("Dari dalam Service :",JSON_data);
+                    JSON_data = null;
                 } catch (final JSONException e) {
                     Log.e(LaurensiusSystemFramework.TAG, e.getMessage());
                 }

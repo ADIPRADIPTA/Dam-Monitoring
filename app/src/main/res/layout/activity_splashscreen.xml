@@ -21,8 +21,9 @@
         android:layout_height="wrap_content"
         android:text="@string/splash"
         android:textColor="#ffffff"
-        android:fontFamily="Segoe UI Semibold"
+        android:fontFamily="arial"
         android:textSize="20dp"
+        android:textStyle="bold"
         android:gravity="center"
         android:layout_marginBottom="30dp"/>
     <LinearLayout
@@ -30,72 +31,82 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <Button
             android:id="@+id/btnUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Public User"/>
+            android:layout_marginBottom="5dp"
+            android:text="Pengguna Umum" />
 
         <Button
             android:id="@+id/btnAdmin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Administrator"/>
+            android:text="Pengolola"/>
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/llLogin"
-        android:visibility="gone"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#55EEEEEE"
-        android:paddingBottom="10dp"
-        android:padding="10dp"
-        android:layout_margin="15dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textColor="#EEEEEE"
-            android:text="Username : "/>
-        <EditText
-            android:id="@+id/etUsername"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#EEEEEE"
-            android:hint="Username"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:textColor="#EEEEEE"
-            android:text="Password : "/>
-        <EditText
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:textColor="#EEEEEE"
-            android:hint="Password"/>
+
         <LinearLayout
+            android:id="@+id/llLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_weight="2">
-            <Button
-                android:id="@+id/btnBatal"
+            android:layout_margin="15dp"
+            android:background="#55EEEEEE"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:paddingBottom="10dp"
+            android:visibility="gone">
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Batal"/>
-            <Button
-                android:id="@+id/btnLogin"
+                android:text="Username : "
+                android:textColor="#EEEEEE"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Login"/>
-        </LinearLayout>
+                android:hint="Username"
+                android:textColor="#EEEEEE" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Password : "
+                android:textColor="#EEEEEE"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="#EEEEEE" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="2">
+
+                <Button
+                    android:id="@+id/btnBatal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="cancel" />
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Login" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

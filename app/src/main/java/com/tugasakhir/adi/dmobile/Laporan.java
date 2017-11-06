@@ -181,7 +181,7 @@ public class Laporan extends AppCompatActivity {
                             LinearLayout.LayoutParams.MATCH_PARENT,
                             LinearLayout.LayoutParams.WRAP_CONTENT);
                     TextView tvItemKetinggian = new TextView(Laporan.this);
-                    tvItemKetinggian.setText("Ketinggian : " + Ketinggian[x] + " cm dari dasar.");
+                    tvItemKetinggian.setText("Ketinggian : " + Ketinggian[x]);
 
                     LinearLayout.LayoutParams laparItemVolume = new LinearLayout.LayoutParams(
                             LinearLayout.LayoutParams.MATCH_PARENT,
@@ -208,7 +208,7 @@ public class Laporan extends AppCompatActivity {
                 }
 
             }else{
-                Toast.makeText(getApplicationContext(),"Error Bos",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
             }
         }
     }

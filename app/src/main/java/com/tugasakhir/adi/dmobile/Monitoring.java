@@ -54,8 +54,12 @@ public class Monitoring extends AppCompatActivity {
                 handler.postDelayed(this, 4000);
             }
         };
+<<<<<<< HEAD
+        timer.schedule(doAsynchronousTask, 0, 5000);
+=======
         handler.postDelayed(refresh, 1000);
 
+>>>>>>> dd71cee4299beb6cdf212a2518907bbae7c48db7
     }
 
     private class GetJSONData extends AsyncTask<Void, Void, Void> {
@@ -79,9 +83,9 @@ public class Monitoring extends AppCompatActivity {
                     JSONObject dataset = jsonObj.getJSONObject(LaurensiusSystemFramework.JSON_OBJ_DATASET);
                     JSONArray last_data = dataset.getJSONArray(LaurensiusSystemFramework.JSON_ARR_LAST_DATA);
                     JSONObject last_data_object = last_data.getJSONObject(0);
-                    Ketinggian = last_data_object.getString("ketinggian").concat(" CM");
+                    Ketinggian = last_data_object.getString("ketinggian").concat(" cm");
                     Status = last_data_object.getString("status");
-                    Volume = last_data_object.getString("volume").concat(" CM³");
+                    Volume = last_data_object.getString("volume").concat(" cm³");
                 } catch (final JSONException e) {
                     Log.e(LaurensiusSystemFramework.TAG, e.getMessage());
                 }
